@@ -4,9 +4,10 @@ import './index.css';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import MainContainer from './components/MainContainer'
+import MainContainer from './components/MainContainer';
+import reducer from './store/reducers/reducer';
 
-const store = createStore(MainContainer);
+const store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>
