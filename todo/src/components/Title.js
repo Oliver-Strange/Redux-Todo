@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { updateTitle } from '../actions';
+import { updateTitle } from '../store/actions/index';
 
 class Title extends React.Component {
   state = {

@@ -1,4 +1,4 @@
-import { UPDATE_TITLE, ADD_NEW_TODO, TOGGLE_TODO } from "../actions";
+import { UPDATE_TITLE, ADD_NEW_TODO, TOGGLE_TODO, DELETE_TODO } from "../actions";
 
 const initialState = {
   title: "Title Of Your Todo List",
@@ -50,6 +50,20 @@ function reducer(state = initialState, action) {
           }
         })
       };
+    case DELETE_TODO:
+      return {
+          ...state,
+          todos: state.todos.map(todo => {
+            if (todo.id === action.payload) {
+                return {
+                    ...todo,
+                    todos: state.todos.slice(action.payload)
+                };
+            } else {
+                return todo;
+            }
+          })
+      }
     default:
       return state;
   }

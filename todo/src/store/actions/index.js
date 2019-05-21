@@ -1,6 +1,7 @@
 export const UPDATE_TITLE = "UPDATE_TITLE";
 export const ADD_NEW_TODO = "ADD_NEW_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
+export const DELETE_TODO = "DELETE_TODO";
 
 export function updateTitle(newTitle) {
   console.log(newTitle);
@@ -27,3 +28,10 @@ export const toggleTodo = id => {
     payload: id
   };
 };
+
+export const deleteTodo = id => {
+    return {
+        type: DELETE_TODO,
+        payload: id
+    }
+}
